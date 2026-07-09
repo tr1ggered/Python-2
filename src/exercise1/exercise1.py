@@ -32,7 +32,7 @@ async def download_image(url, save_dir, results):
             results.append((url, "Error"))
     except Exception:
         results.append((url, "Error"))
-#
+#ввод
 async def iostream(save_dir, results, tasks):
     while True:
         url = await ainput('Enter image URL (empty line to stop): ')
@@ -42,7 +42,7 @@ async def iostream(save_dir, results, tasks):
         task = asyncio.create_task(download_image(url, save_dir, results))
         tasks.append(task)
 
-#
+#main
 async def main():
     while True:
         save_dir = await ainput('Enter directory to save images: ')
